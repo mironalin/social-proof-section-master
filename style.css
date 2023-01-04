@@ -1,0 +1,242 @@
+:root {
+    --ff-base: 'League Spartan', sans-serif;
+    --fw-bold: 700;
+    --fw-semibold: 500;
+    --fw-regular: 400;
+
+    --clr-primary-very_dark_magenta: hsl(300, 43%, 22%);
+    --clr-primary-soft_pink: hsl(333, 80%, 67%);
+
+    --clr-neutral-dark_grayish_magenta: hsl(303, 10%, 53%);
+    --clr-neutral-light_grayish_magenta: hsl(300, 24%, 96%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+}
+
+*, *::before,m *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    font-size: 0.9125rem;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    font-family: var(--ff-base);
+}
+
+.main-container {
+    margin: 1.5rem;
+    display: grid;
+    gap: 3rem;
+}
+
+.container-header {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.header-title {
+    color: var(--clr-primary-very_dark_magenta);
+    font-size: 2.2rem;
+    font-weight: var(--fw-bold);
+    text-align: center;
+    margin: 0 3rem;
+    line-height: 0.8;
+}
+
+.header-description {
+    color: var(--clr-neutral-dark_grayish_magenta);
+    font-size: 1.15rem;
+    font-weight: var(--fw-semibold);
+    line-height: 1.3;
+    text-align: center;
+}
+
+.container-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rating-reviews, .rating-reportguru, .rating-besttech {
+    background-color: var(--clr-neutral-light_grayish_magenta);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem;
+    border-radius: 0.5rem;
+}
+
+.rating-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-description {
+    color: var(--clr-primary-very_dark_magenta);
+    font-weight: var(--fw-bold);
+    font-size: 1.05rem;
+}
+
+.container-review {
+    display: grid;
+    gap: 1rem;
+}
+
+.review-colton, .review-irene, .review-anne {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background-color: var(--clr-primary-very_dark_magenta);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.rating-header {
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author-name {
+    color: var(--clr-neutral-light_grayish_magenta);
+    font-weight: var(--fw-semibold);
+    font-size: 1.05rem;
+}
+
+.verified-status {
+    font-size: 1rem;
+    color: var(--clr-primary-soft_pink);
+    font-weight: var(--fw-regular);
+}
+
+.review-description {
+    color: var(--clr-neutral-light_grayish_magenta);
+    line-height: 1.4;
+    font-size: 1.05rem;
+}
+
+@media(min-width:1275px) {
+
+
+    .container-header {
+        gap: 1.85rem;
+        grid-area: hd;
+        padding-right: 3.5rem;
+    }
+
+    .container-rating {
+        display: grid;
+        grid-area: rt;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 1.7em 0;
+    }
+    
+    .container-review {
+        grid-area: rv;
+    }
+
+    .main-container {
+        grid-template-areas: "hd hd rt rt" "rv rv rv rv";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 4rem;
+        grid-row-gap: 4.5rem;
+        margin: 0 10.25rem; 
+    }
+
+    .header-title {
+        font-size: 3.61rem;
+        margin: 0;
+        text-align: left;
+        line-height: 0.8;
+    }
+
+    .header-description {
+        text-align: left;
+    }
+
+    .container-review {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .rating-reviews, .rating-reportguru, .rating-besttech {
+        flex-direction: row;
+        gap: 2rem;
+        padding-left: 2rem;
+    }
+
+    .rating-reviews {
+        margin-right: 6rem;
+    }
+
+    .rating-reportguru {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .rating-besttech {
+        margin-left: 6rem;
+    }
+
+    .container-review {
+        flex-direction: row;
+        gap: 1.65rem;
+    }
+
+    .review-colton, .review-irene, .review-anne {
+        max-width: 349px;
+        max-height: 234px;
+        padding-top: 2.2rem;
+        padding-right: 1.8rem;
+        gap: 1.75rem;
+    }
+
+    .review-irene {
+        margin-top: 1rem;
+    }
+
+    .review-anne {
+        margin-top: 2rem;
+    }
+
+    .review-description {
+        line-height: 1.3;
+    }
+
+    .main-container {
+        max-width: 1127px;
+    }
+}
